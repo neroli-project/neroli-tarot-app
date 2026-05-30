@@ -8,13 +8,18 @@ body {
   background: radial-gradient(circle, #1d0b33, #0b0314);
   color: #f5e8ff;
   text-align: center;
+
+  font-size: 18px;
+  line-height: 1.8;
+
 }
 
 /* -------------------- */
 /* コンテナ */
 /* -------------------- */
 .container {
-  max-width: 400px;
+   width: 92%;
+  max-width: 520px;
   margin: 0 auto;
   text-align: center;
   font-family: 'Noto Sans JP', sans-serif;
@@ -22,7 +27,7 @@ body {
 
 /* タイトル */
 .title {
-  font-size: 36px;
+  font-size: 42px;
   margin-bottom: 20px;
   letter-spacing: 2px;
   text-shadow: 0 0 10px #f0d6ff;
@@ -61,9 +66,9 @@ body {
 /* -------------------- */
 .result {
   margin-top: 30px;
-  font-size: 20px;
+  font-size: 22px;
   line-height: 1.6;
-  padding: 20px;
+  padding: 24px;
   background: rgba(255,255,255,0.1);
   border-radius: 10px;
   display: none;
@@ -94,8 +99,8 @@ body {
 
 button {
   margin-top: 10px;
-  padding: 10px 20px;
-  font-size: 18px;
+  padding: 14px 24px;
+  font-size: 20px;
   background: #5d2eb0;
   color: white;
   border: none;
