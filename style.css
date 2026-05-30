@@ -1,0 +1,146 @@
+/* -------------------- */
+/* 全体設定 */
+/* -------------------- */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Times New Roman", serif;
+  background: radial-gradient(circle, #1d0b33, #0b0314);
+  color: #f5e8ff;
+  text-align: center;
+}
+
+/* -------------------- */
+/* コンテナ */
+/* -------------------- */
+.container {
+  max-width: 400px;
+  margin: 0 auto;
+  text-align: center;
+  font-family: 'Noto Sans JP', sans-serif;
+}
+
+/* タイトル */
+.title {
+  font-size: 36px;
+  margin-bottom: 20px;
+  letter-spacing: 2px;
+  text-shadow: 0 0 10px #f0d6ff;
+}
+
+/* -------------------- */
+/* カード表示エリア */
+/* -------------------- */
+.card-area {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+/* シャッフル動画 */
+#shuffle-video {
+  width: 100%;
+  height: 100%;
+  display: none;
+  border-radius: 14px;
+}
+
+/* カード画像 */
+.card-img {
+  width: 100%;
+  max-width: 300px;
+  margin: 0 auto;
+  border-radius: 10px;
+  display: none;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+  opacity: 0;
+  transition: opacity 0.8s ease-in-out;
+}
+
+/* -------------------- */
+/* 結果表示（カード名・テキスト） */
+/* -------------------- */
+.result {
+  margin-top: 30px;
+  font-size: 20px;
+  line-height: 1.6;
+  padding: 20px;
+  background: rgba(255,255,255,0.1);
+  border-radius: 10px;
+  display: none;
+  box-shadow: 0 0 12px rgba(255,255,255,0.3);
+  color: #fff;
+  opacity: 0;
+  transition: opacity 0.8s ease-in-out;
+}
+
+.result h2 {
+  margin: 0 0 10px;
+  font-size: 22px;
+  color: #ffd700;
+  text-shadow: 0 0 6px #fff;
+}
+
+.result p {
+  margin: 0;
+  color: #f5e8ff;
+}
+
+/* -------------------- */
+/* コントロール（ボタン・セレクト） */
+/* -------------------- */
+.controls {
+  margin-top: 20px;
+}
+
+button {
+  margin-top: 10px;
+  padding: 10px 20px;
+  font-size: 18px;
+  background: #5d2eb0;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: 0 0 10px #8e4bff;
+  transition: background 0.3s ease;
+}
+
+button:hover {
+  background: #7b47db;
+}
+
+select {
+  font-size: 16px;
+  padding: 8px;
+  border-radius: 6px;
+}
+
+/* -------------------- */
+/* フェードイン用のクラス（JSで付与） */
+/* -------------------- */
+.fade-in {
+  opacity: 1 !important;
+  transition: opacity 0.8s ease-in-out;
+}
+
+.card-img,
+.result {
+  opacity: 0; /* 初期は透明 */}
+
+
+#redo-btn {
+  margin-top: 15px;
+  padding: 8px 16px;
+  font-size: 16px;
+  background: #8e44ad;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  box-shadow: 0 0 8px #b06fcf;
+}
+
+#redo-btn:hover {
+  background: #a155c3;
+}
+
