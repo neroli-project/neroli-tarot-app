@@ -1,41 +1,40 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta charset="UTF-8" />
   <title>タロット1枚引き</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+<div class="container">
+  <h1 class="title">🔮 Tarot Reading</h1>
 
-  <div class="container">
-    <h1 class="title">🔮 Tarot Reading</h1>
-
-    <div class="card-area">
-      <video id="shuffle-video" playsinline></video>
-
-      <img id="card-img" class="card-img" src="" alt="card" />
-<div class="instruction">
-  まずは占いたいテーマを選びましょう。<br>深く呼吸をしながら内容を思い浮かべ、<br>カードを引いてください。
-
-
-    </div>
-
-    <div class="controls">
-      <select id="category">
-        <option value="today">今日の運勢</option>
-        <option value="feelings">相手の気持ち</option>
-        <option value="advice">アドバイス</option>
-        <option value="future">未来予測</option>
-        <option value="other">その他</option>
-      </select>
-
-      <button id="draw-btn">カードを引く</button>
-    </div>
-
-    <div id="result" class="result"></div>
+  <div class="card-area">
+    <video id="shuffle-video" playsinline></video>
+    <img id="card-img" class="card-img" src="" alt="card" />
   </div>
 
-  <script src="script.js"></script>
+  <div id="instruction-area" class="instruction">
+    まずは占いたいテーマを選びましょう。<br>深く呼吸をしながら内容を思い浮かべ、<br>カードを引いてください。
+  </div>
+
+  <div id="result-area" class="result" style="display: none;">
+    <h2 id="result-title"></h2>
+    <p id="result-text"></p>
+  </div>
+
+  <div class="controls">
+    <select id="category">
+      <option value="today">今日の運勢</option>
+      <option value="feelings">相手の気持ち</option>
+      <option value="advice">アドバイス</option>
+      <option value="future">未来予測</option>
+    </select>
+    <button id="draw-btn">カードを引く</button>
+  </div>
+</div>
+
+<script src="script.js"></script>
 </body>
 </html>
