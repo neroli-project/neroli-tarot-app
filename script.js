@@ -26,9 +26,12 @@ function drawCard() {
   const instruction = document.getElementById('instruction-area');
   if (instruction) instruction.style.display = "none";
   
-  // 2. 結果エリアをリセットして表示準備
-  resultArea.style.display = "block";
-  resultArea.innerHTML = ""; // 中身を空にする
+  // ----------------------------------------------------
+  // 【ここを削除・変更】
+  // シャッフル中は結果エリアを完全に隠しておく（枠も出さない）
+  resultArea.style.display = "none"; 
+  resultArea.innerHTML = ""; 
+  // ----------------------------------------------------
   
   // 前回の画像リセット
   cardImg.classList.remove("fade-in");
@@ -41,8 +44,15 @@ function drawCard() {
   shuffleVideo.load();
   shuffleVideo.play();
 
+  // ★動画が終わった後の処理
   shuffleVideo.onended = function () {
     shuffleVideo.style.display = "none";
+
+    // ----------------------------------------------------
+    // 【ここを追加】
+    // 動画が終わったので、結果エリアを表示する（枠を出す）
+    resultArea.style.display = "block";
+    // ----------------------------------------------------
 
     // 🎴 ランダムでカード選択
     const card = cardsData[Math.floor(Math.random() * cardsData.length)];
@@ -85,5 +95,4 @@ function drawCard() {
     });
   };
 }
-
 drawBtn.addEventListener("click", drawCard);
