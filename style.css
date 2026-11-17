@@ -14,15 +14,13 @@ body {
 
 }
 
-/* -------------------- */
-/* コンテナ */
-/* -------------------- */
 .container {
-   width: 92%;
+  width: 92%;
   max-width: 520px;
   margin: 0 auto;
   text-align: center;
   font-family: 'Noto Sans JP', sans-serif;
+  padding-bottom: 80px; /* ←これを入れておくと下が隠れません！ */
 }
 
 /* タイトル */

@@ -7,6 +7,44 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+
+<!-- ▼ 鍵認証スクリプト ▼ -->
+<script>
+  (function() {
+    // 1. このアプリ用の合言葉（鍵）
+    const SECRET_KEY = "zubatto"; 
+
+    // 2. 案内先のnote記事URL
+    const NOTE_URL = "https://note.com"; 
+
+    const STORAGE_KEY = "app_unlocked_status_human"; // 他のアプリと混ざらないようキー名を少し変更しておくと安全！
+    const urlParams = new URLSearchParams(window.location.search);
+    const keyParam = urlParams.get("key");
+
+    // URLに正しい鍵がついているかチェック
+    if (keyParam === SECRET_KEY) {
+      localStorage.setItem(STORAGE_KEY, SECRET_KEY);
+      window.history.replaceState({}, document.title, window.location.pathname);
+    }
+
+    // ブラウザに正しい鍵が記憶されているかチェック
+    const savedKey = localStorage.getItem(STORAGE_KEY);
+    if (savedKey !== SECRET_KEY) {
+      document.addEventListener("DOMContentLoaded", function() {
+        document.body.innerHTML = `
+          <div style="text-align: center; padding: 50px 20px; font-family: sans-serif; line-height: 1.6; background: #0f172a; color: #fff; min-height: 100vh; box-sizing: border-box;">
+            <h2>🔒 このアプリはnote購入者専用です</h2>
+            <p style="color: #94a3b8;">noteの有料記事内に記載されている専用リンクからアクセスしてください。</p>
+            <a href="${NOTE_URL}" style="display: inline-block; margin-top: 20px; padding: 12px 24px; background: #2cb696; color: #fff; text-decoration: none; border-radius: 6px; font-weight: bold;">
+              noteの記事ページへ戻る
+            </a>
+          </div>
+        `;
+      });
+    }
+  })();
+</script>
+
 <div class="container">
   <h1 class="title">🔮 Tarot Reading</h1>
 
@@ -35,6 +73,19 @@
   </div>
 </div>
 
-<script src="script.js"></script>
+<!-- クレジット表記（一番手前にしっかり固定表示） -->
+<div style="position: fixed; bottom: 0; left: 0; width: 100%; text-align: center; font-size: 11px; color: #ffeb3b; background: rgba(15,23,42,0.9); padding: 6px 0; z-index: 99999; border-top: 1px solid rgba(255,255,255,0.1);">
+  © 2026 ハル / note購入者専用アプリ
+</div>
+
+<script>
+  // 鍵が正しい時だけ script.js を読み込む（storageキー名も合わせる）
+  if (localStorage.getItem("app_unlocked_status_human") === "zubatto") {
+    const s = document.createElement("script");
+    s.src = "script.js";
+    document.body.appendChild(s);
+  }
+</script>
+
 </body>
 </html>
