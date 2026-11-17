@@ -12,10 +12,10 @@
 <script>
   (function() {
     // 1. このアプリ用の合言葉（鍵）
-    const SECRET_KEY = "zubatto"; 
+    const SECRET_KEY = "neroli"; 
 
     // 2. 案内先のnote記事URL
-    const NOTE_URL = "https://note.com"; 
+    const NOTE_URL = "https://note.com/preview/n259c9a6a922d?prev_access_key=6c7cee024ca18ff041cebcbd14fde860"; 
 
     const STORAGE_KEY = "app_unlocked_status_human"; // 他のアプリと混ざらないようキー名を少し変更しておくと安全！
     const urlParams = new URLSearchParams(window.location.search);
@@ -80,7 +80,7 @@
 
 <script>
   // 鍵が正しい時だけ script.js を読み込む（storageキー名も合わせる）
-  if (localStorage.getItem("app_unlocked_status_human") === "zubatto") {
+  if (localStorage.getItem("app_unlocked_status_human") === "neroli") {
     const s = document.createElement("script");
     s.src = "script.js";
     document.body.appendChild(s);
